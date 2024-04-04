@@ -1,0 +1,976 @@
+{
+	"wDataSrv": {
+		"wProps": {}
+	},
+	"wCompElems": {
+		"main": {
+			"wCompDefs": {
+				"wDisplayName": "",
+				"wWidgetParams": "",
+				"wDynamic": false,
+				"wMATSWidget": "MATSLayout",
+				"wName": "MATSLayout",
+				"wSubType": "",
+				"wType": ""
+			},
+			"wProps": {
+				"wSpan": 24,
+				"wStyle": {
+					"wClass": "",
+					"height": "100%",
+					"flex": 1
+				}
+			},
+			"wCompElems": {
+				"innerLayout1": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wWidgetParams": "",
+						"wDynamic": false,
+						"wMATSWidget": "MATSLayout",
+						"wName": "",
+						"wSubType": "",
+						"wType": ""
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "fa-wifi",
+							"backgroundColor": "#1d9192",
+							"height": 65,
+							"flexDirection": "row",
+							"alignItems": "center"
+						}
+					},
+					"wCompElems": {
+						"MATSImage": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wType": "",
+								"wSubType": "",
+								"wName": "",
+								"wMATSWidget": "MATSImage",
+								"wDynamic": false
+							},
+							"wProps": {
+								"wPath": "../../Images/mats-engine.png",
+								"wSpan": 24,
+								"wStyle": {
+									"height": 50,
+									"width": 120
+								}
+							}
+						},
+						"title": {
+							"wCompDefs": {
+								"wDisplayName": "Demo Dashboard 1",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSText",
+								"wName": "",
+								"wSubType": "",
+								"wType": "h5"
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"color": "white"
+								}
+							},
+							"wCompElems": {}
+						},
+						"user": {
+							"wCompDefs": {
+								"wDisplayName": "Demo Dashboard",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSLayout",
+								"wName": "",
+								"wSubType": "",
+								"wType": "h5"
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"justifyContent": "flex-end",
+									"flexDirection": "row",
+									"alignItems": "center",
+									"width": "86%"
+								}
+							},
+							"wCompElems": {
+								"wifi": {
+									"wCompDefs": {
+										"wDisplayName": "Demo Dashboard",
+										"wWidgetParams": "",
+										"wDynamic": false,
+										"wMATSWidget": "MATSIcon",
+										"wName": "",
+										"wSubType": "",
+										"wType": "h5"
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"wClass": "wifi",
+											"color": "white"
+										}
+									},
+									"wCompElems": {}
+								},
+								"user": {
+									"wCompDefs": {
+										"wDisplayName": "Demo Dashboard",
+										"wWidgetParams": "",
+										"wDynamic": false,
+										"wMATSWidget": "MATSIcon",
+										"wName": "",
+										"wSubType": "",
+										"wType": "h5"
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"wClass": "user",
+											"color": "white",
+											"marginLeft": 30
+										}
+									},
+									"wCompElems": {}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"Body": {
+			"wCompDefs": {
+				"wDisplayName": "",
+				"wWidgetParams": "",
+				"wDynamic": false,
+				"wMATSWidget": "MATSLayout",
+				"wName": "",
+				"wSubType": "",
+				"wType": ""
+			},
+			"wProps": {
+				"wSpan": 24,
+				"wStyle": {
+					"wClass": "",
+					"backgroundColor": "",
+					"height": 640,
+					"padding": 20
+				}
+			},
+			"wCompElems": {
+				"firstRow": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wWidgetParams": "",
+						"wDynamic": false,
+						"wMATSWidget": "MATSLayout",
+						"wName": "",
+						"wSubType": "",
+						"wType": ""
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "",
+							"backgroundColor": "",
+							"alignItems": "center",
+							"flexDirection": "row",
+							"justifyContent": "space-around"
+						}
+					},
+					"wCompElems": {
+						"plan": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSLayout",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"wClass": "",
+									"backgroundColor": "",
+									"justifyContent": "center",
+									"alignItems": "center",
+									"flexDirection": "row"
+								}
+							},
+							"wCompElems": {
+								"planL": {
+									"wCompDefs": {
+										"wDisplayName": "Select Plan : ",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSText",
+										"wDynamic": false,
+										"wType": "S1"
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {}
+									}
+								},
+								"MATSSelect": {
+									"wCompDefs": {
+										"wDisplayName": "Select Plan : ",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSSelect",
+										"wDynamic": false,
+										"wType": "S1"
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"width": 250,
+											"paddingLeft": 20
+										}
+									}
+								}
+							}
+						},
+						"date": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSLayout",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"wClass": "",
+									"backgroundColor": "",
+									"justifyContent": "center",
+									"alignItems": "center",
+									"flexDirection": "row"
+								}
+							},
+							"wCompElems": {
+								"dateL": {
+									"wCompDefs": {
+										"wDisplayName": "Select Date : ",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSText",
+										"wDynamic": false,
+										"wType": "S1"
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {}
+									}
+								},
+								"dateV": {
+									"wCompDefs": {
+										"wDisplayName": "Select Plan : ",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSDatePicker",
+										"wDynamic": false,
+										"wType": "S1"
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"width": 250,
+											"marginLeft": 20
+										}
+									}
+								}
+							}
+						},
+						"button": {
+							"wCompDefs": {
+								"wDisplayName": "Download Report",
+								"wType": "",
+								"wSubType": "",
+								"wName": "",
+								"wMATSWidget": "MATSButton",
+								"wDynamic": false
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {}
+							}
+						}
+					}
+				},
+				"second": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wWidgetParams": "",
+						"wDynamic": false,
+						"wMATSWidget": "MATSLayout",
+						"wName": "",
+						"wSubType": "",
+						"wType": ""
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "fa-wifi",
+							"justifyContent": "space-around",
+							"alignItems": "center",
+                            "padding": 20,
+                            "flexDirection":"row"
+						}
+					},
+					"wCompElems": {
+						"card1": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSLayout",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"alignItems": "center",
+									"backgroundColor": "#00bcd5",
+									"height": 80,
+                                    "width": 150,
+                                    "padding": 10,
+                                    "borderRadius": 10
+								}
+							},
+							"wCompElems": {
+								"text1": {
+									"wCompDefs": {
+										"wDisplayName": "1000",
+										"wType": "h6",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSText",
+										"wDynamic": false
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+                                            "color":"white"
+                                        }
+									}
+								},
+								"text2": {
+									"wCompDefs": {
+										"wDisplayName": "",
+										"wWidgetParams": "",
+										"wDynamic": false,
+										"wMATSWidget": "MATSLayout",
+										"wName": "",
+										"wSubType": "",
+										"wType": ""
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"alignItems": "center",
+                                            "flexDirection":"row"
+										}
+									},
+									"wCompElems": {
+										"icon": {
+											"wCompDefs": {
+												"wDisplayName": "",
+												"wType": "",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSIcon",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "wClass":"user",
+                                                    "color":"white"
+                                                }
+											}
+										},
+                                        "text": {
+											"wCompDefs": {
+												"wDisplayName": "Card1",
+												"wType": "S1",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSText",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "color":"white"
+                                                }
+											}
+										}
+									}
+								}
+							}
+						},
+                        "card2": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSLayout",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"alignItems": "center",
+									"backgroundColor": "#fc9600",
+									"height": 80,
+                                    "width": 150,
+                                    "padding": 10,
+                                    "borderRadius": 10
+								}
+							},
+							"wCompElems": {
+								"text1": {
+									"wCompDefs": {
+										"wDisplayName": "1000",
+										"wType": "h6",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSText",
+										"wDynamic": false
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+                                            "color":"white"
+                                        }
+									}
+								},
+								"text2": {
+									"wCompDefs": {
+										"wDisplayName": "",
+										"wWidgetParams": "",
+										"wDynamic": false,
+										"wMATSWidget": "MATSLayout",
+										"wName": "",
+										"wSubType": "",
+										"wType": ""
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"alignItems": "center",
+                                            "flexDirection":"row"
+										}
+									},
+									"wCompElems": {
+										"icon": {
+											"wCompDefs": {
+												"wDisplayName": "",
+												"wType": "",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSIcon",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "wClass":"eye",
+                                                    "color":"white"
+                                                }
+											}
+										},
+                                        "text": {
+											"wCompDefs": {
+												"wDisplayName": "Card2",
+												"wType": "S1",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSText",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "color":"white"
+                                                }
+											}
+										}
+									}
+								}
+							}
+						},
+                        "card3": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSLayout",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"alignItems": "center",
+									"backgroundColor": "#4bb04d",
+									"height": 80,
+                                    "width": 150,
+                                    "padding": 10,
+                                    "borderRadius": 10
+								}
+							},
+							"wCompElems": {
+								"text1": {
+									"wCompDefs": {
+										"wDisplayName": "1000",
+										"wType": "h6",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSText",
+										"wDynamic": false
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+                                            "color":"white"
+                                        }
+									}
+								},
+								"text2": {
+									"wCompDefs": {
+										"wDisplayName": "",
+										"wWidgetParams": "",
+										"wDynamic": false,
+										"wMATSWidget": "MATSLayout",
+										"wName": "",
+										"wSubType": "",
+										"wType": ""
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"alignItems": "center",
+											"backgroundColor": "",
+                                            "flexDirection":"row"
+										}
+									},
+									"wCompElems": {
+										"icon": {
+											"wCompDefs": {
+												"wDisplayName": "",
+												"wType": "",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSIcon",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "wClass":"user",
+                                                    "color":"white"
+                                                }
+											}
+										},
+                                        "text": {
+											"wCompDefs": {
+												"wDisplayName": "Card3",
+												"wType": "S1",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSText",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "color":"white"
+                                                }
+											}
+										}
+									}
+								}
+							}
+						},
+                        "card4": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSLayout",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"alignItems": "center",
+									"backgroundColor": "#2196f3",
+									"height": 80,
+                                    "width": 150,
+                                    "padding": 10,
+                                    "borderRadius": 10
+								}
+							},
+							"wCompElems": {
+								"text1": {
+									"wCompDefs": {
+										"wDisplayName": "1000",
+										"wType": "h6",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSText",
+										"wDynamic": false
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+                                            "color":"white"
+                                        }
+									}
+								},
+								"text2": {
+									"wCompDefs": {
+										"wDisplayName": "",
+										"wWidgetParams": "",
+										"wDynamic": false,
+										"wMATSWidget": "MATSLayout",
+										"wName": "",
+										"wSubType": "",
+										"wType": ""
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"alignItems": "center",
+											"backgroundColor": "",
+                                            "flexDirection":"row"
+										}
+									},
+									"wCompElems": {
+										"icon": {
+											"wCompDefs": {
+												"wDisplayName": "",
+												"wType": "",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSIcon",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "wClass":"user",
+                                                    "color":"white"
+                                                }
+											}
+										},
+                                        "text": {
+											"wCompDefs": {
+												"wDisplayName": "Card4",
+												"wType": "S1",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSText",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "color":"white"
+                                                }
+											}
+										}
+									}
+								}
+							}
+						},
+                        "card5": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSLayout",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"alignItems": "center",
+									"backgroundColor": "#f44236",
+									"height": 80,
+                                    "width": 150,
+                                    "padding": 10,
+                                    "borderRadius": 10
+								}
+							},
+							"wCompElems": {
+								"text1": {
+									"wCompDefs": {
+										"wDisplayName": "1000",
+										"wType": "h6",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSText",
+										"wDynamic": false
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+                                            "color":"white"
+                                        }
+									}
+								},
+								"text2": {
+									"wCompDefs": {
+										"wDisplayName": "",
+										"wWidgetParams": "",
+										"wDynamic": false,
+										"wMATSWidget": "MATSLayout",
+										"wName": "",
+										"wSubType": "",
+										"wType": ""
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"alignItems": "center",
+											"backgroundColor": "",
+                                            "flexDirection":"row"
+										}
+									},
+									"wCompElems": {
+										"icon": {
+											"wCompDefs": {
+												"wDisplayName": "",
+												"wType": "",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSIcon",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "wClass":"user",
+                                                    "color":"white"
+                                                }
+											}
+										},
+                                        "text": {
+											"wCompDefs": {
+												"wDisplayName": "Card5",
+												"wType": "S1",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSText",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "color":"white"
+                                                }
+											}
+										}
+									}
+								}
+							}
+						},
+						"card6": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSLayout",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"alignItems": "center",
+									"backgroundColor": "#f49236",
+									"height": 80,
+                                    "width": 150,
+                                    "padding": 10,
+                                    "borderRadius": 10
+								}
+							},
+							"wCompElems": {
+								"text1": {
+									"wCompDefs": {
+										"wDisplayName": "1000",
+										"wType": "h6",
+										"wSubType": "",
+										"wName": "",
+										"wMATSWidget": "MATSText",
+										"wDynamic": false
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+                                            "color":"white"
+                                        }
+									}
+								},
+								"text2": {
+									"wCompDefs": {
+										"wDisplayName": "",
+										"wWidgetParams": "",
+										"wDynamic": false,
+										"wMATSWidget": "MATSLayout",
+										"wName": "",
+										"wSubType": "",
+										"wType": ""
+									},
+									"wProps": {
+										"wSpan": 24,
+										"wStyle": {
+											"alignItems": "center",
+											"backgroundColor": "",
+                                            "flexDirection":"row"
+										}
+									},
+									"wCompElems": {
+										"icon": {
+											"wCompDefs": {
+												"wDisplayName": "",
+												"wType": "",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSIcon",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "wClass":"user",
+                                                    "color":"white"
+                                                }
+											}
+										},
+                                        "text": {
+											"wCompDefs": {
+												"wDisplayName": "Card6",
+												"wType": "S1",
+												"wSubType": "",
+												"wName": "",
+												"wMATSWidget": "MATSText",
+												"wDynamic": false
+											},
+											"wProps": {
+												"wSpan": 24,
+												"wStyle": {
+                                                    "color":"white"
+                                                }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+                "third": {
+                    "wCompDefs": {
+                        "wDisplayName": "",
+                        "wWidgetParams": "",
+                        "wDynamic": false,
+                        "wMATSWidget": "MATSLayout",
+                        "wName": "",
+                        "wSubType": "",
+                        "wType": ""
+                    },
+                    "wProps": {
+                        "wSpan": 24,
+                        "wStyle": {
+                            "wClass": "fa-wifi",
+                            "justifyContent": "space-around",
+                            "alignItems": "center",
+                            "flexDirection":"row"
+                        }
+                    },
+                    "wCompElems": {
+                        "MATSLineChart": {
+                            "wCompDefs": {
+                                "wDisplayName": "",
+                                "wType": "",
+                                "wSubType": "",
+                                "wName": "MATSLineChart",
+                                "wMATSWidget": "MATSLineChart",
+                                "wDynamic": false
+                            },
+                            "wProps": {
+                                "wSpan": 24,
+                                "wStyle": {
+                                    "width": 600,
+                                    "height": 450
+                                }
+                            }
+                        },
+                        "MATSBarChart": {
+                            "wCompDefs": {
+                                "wDisplayName": "",
+                                "wType": "",
+                                "wSubType": "",
+                                "wName": "",
+                                "wMATSWidget": "MATSBarChart",
+                                "wDynamic": false
+                            },
+                            "wProps": {
+                                "wSpan": 24,
+                                "wStyle": {
+                                    "wClass": "FooterBlue",
+                                    "width": 600,
+                                    "height": 450
+                                }
+                            }
+                        }
+                    }
+                }
+			}
+		},
+		"MATSFooter": {
+			"wCompDefs": {
+				"wDisplayName": "Powered by Linkez Technologies Private Limited",
+				"wType": "MATSFooter",
+				"wSubType": "",
+				"wName": "MATSFooter",
+				"wMATSWidget": "MATSFooter",
+				"wDynamic": false
+			},
+			"wProps": {
+				"wSpan": 24,
+				"wStyle": {
+					"wClass": "FooterBlue",
+                    "backgroundColor": "#1d9192",
+                    "width":"100%"
+
+				}
+			}
+		}
+	}
+}

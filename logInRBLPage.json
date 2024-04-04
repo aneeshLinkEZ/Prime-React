@@ -1,0 +1,214 @@
+{
+  "wDataSrv": {
+    "wProps": {
+      "wData": {
+        "wDataInType": "server",
+        "wDataIn": [
+          {
+            "name": "loginCredentials",
+            "uri": "/authMgr/login",
+            "schemaFileName": "uploadSchema"
+          }
+        ],
+        "wReturnMsg": {
+          "op_id": "1"
+        },
+        "wDataOut": [ "loginCredentials" ],
+        "wDataOutType": "",
+        "wCust": []
+      }
+    }
+
+  },
+  "wCompElems": {
+    "icon": {
+      "wCompDefs": {
+        "wDisplayName": "",
+        "wWidgetParams": "",
+        "wDynamic": false,
+        "wMATSWidget": "MATSfaIcon",
+        "wName": "faIcon",
+        "wSubType": "",
+        "wType": ""
+      },
+      "wProps": {
+        "wSpan": 24,
+        "wStyle": {
+          "wClass": "fa-wifi",
+          "font-size": "2rem",
+          "position": "absolute",
+          "top": "0rem",
+          "right": "0rem",
+          "color": "green",
+          "z-index": "11"
+
+        },
+        "wData": {
+          "wCust": [],
+          "wDataIn": "_serverCon",
+          "wDataInType": "",
+          "wDataOut": "NA",
+          "wDataOutType": "",
+          "wReturnMsg": {}
+        },
+        "wFeatures": {
+          "wborder": false,
+          "wClrBtn": false,
+          "wBlinkRate": "2",
+          "wEventList": []
+        },
+        "wRules": [
+          {
+            "exp": "props._serverCon",
+            "action": {
+              "color": "green"
+            }
+          },
+          {
+            "exp": "!props._serverCon",
+            "action": {
+              "color": "red"
+            }
+          }
+        ]
+      }
+    },
+    "MATSLogin": {
+      "wCompDefs": {
+        "wDisplayName": "Assembly Flow App Login",
+        "wType": "MatsLogin",
+        "wSubType": "",
+        "wName": "MATSLogin",
+        "wMATSWidget": "MATSLogin",
+        "wDynamic": false
+      },
+      "wProps": {
+        "wImagePath": "./logo.png",
+        "wSpan": 24,
+        "wStyle": {
+          "wClass": "blueGradient"
+        },
+        "wData": {
+          "wDataInType": "",
+          "wDataIn": "",
+          "wReturnMsg": {},
+          "wDataOut": {
+            "userName": "",
+            "pwd": ""
+          },
+          "wDataOutType": "object",
+          "wCust": []
+        },
+        "wFeatures": {
+          "wborder": false,
+          "wClrBtn": false,
+          "wBlinkRate": "2",
+          "wEventList": []
+        },
+        "wRules": [],
+        "wFieldValRulesCust": []
+      },
+      "wCompElems": {
+        "contentMain": {
+          "wCompDefs": {
+            "wDisplayName": "",
+            "wType": "MATSLayout",
+            "wSubType": "",
+            "wName": "MATSLayout",
+            "wMATSWidget": "MATSLayout",
+            "wDynamic": false
+          },
+          "wProps": {
+            "wSpan": 24,
+            "wStyle": {
+              "padding": "0 0px",
+              "marginTop": 0,
+              "maxHeight": ""
+            },
+            "wData": {
+              "wDataInType": "",
+              "wDataIn": "",
+              "wReturnMsg": {},
+              "wDataOut": "NA",
+              "wDataOutType": "",
+              "wCust": []
+            },
+            "wFeatures": {},
+            "wRules": [],
+            "wFieldValRulesCust": []
+          },
+          "wCompElems": {
+
+            "MatsButton": {
+              "wCompDefs": {
+                "wDisplayName": "LOGIN",
+                "wType": "MatsButton",
+                "wSubType": "",
+                "wName": "MatsButton",
+                "wMATSWidget": "MATSButton",
+                "wDynamic": false
+              },
+              "wProps": {
+                "wSpan": 24,
+                "wStyle": {
+                  "wClass": "class-grey-nav"
+                },
+                "wData": {
+                  "wDataInType": "array",
+                  "wDataIn": [ "userName", "pwd" ],
+                  "wReturnMsg": {},
+                  "wDataOut": "loginCredentials",
+                  "wDataOutType": "",
+                  "wCust": []
+                },
+                "wFeatures": {
+                  "wborder": false,
+                  "wClrBtn": false,
+                  "wBlinkRate": "2",
+                  "wEventList": []
+                },
+                "wRules": [],
+                "wFieldValRulesCust": []
+              }
+            }
+
+          }
+        }
+      }
+    },
+    "MATSFooter": {
+      "wCompDefs": {
+        "wDisplayName": "Powered by Linkez Technologies Private Limited",
+        "wType": "MATSFooter",
+        "wSubType": "",
+        "wName": "MATSFooter",
+        "wMATSWidget": "MATSFooter",
+        "wDynamic": false
+      },
+      "wProps": {
+        "wSpan": 24,
+        "wStyle": {
+          "wClass": "FooterBlue"
+        },
+        "wData": {
+          "wDataInType": "",
+          "wDataIn": "",
+          "wReturnMsg": {},
+          "wDataOut": "NA",
+          "wDataOutType": "",
+          "wCust": []
+        },
+        "wFeatures": {
+          "wborder": false,
+          "wClrBtn": false,
+          "wBlinkRate": "2",
+          "wEventList": []
+        },
+        "wRules": [],
+        "wFieldValRulesCust": []
+      }
+    }
+  }
+
+
+}

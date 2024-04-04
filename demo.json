@@ -1,0 +1,194 @@
+{
+	"wDataSrv": {
+		"wProps": {}
+	},
+	"wCompElems": {
+		"main": {
+			"wCompDefs": {
+				"wDisplayName": "",
+				"wWidgetParams": "",
+				"wDynamic": false,
+				"wMATSWidget": "MATSLayout",
+				"wName": "MATSLayout",
+				"wSubType": "",
+				"wType": ""
+			},
+			"wProps": {
+				"wSpan": 24,
+				"wStyle": {
+					"wClass": "",
+					"padding": 50,
+					"justifyContent": "center",
+					"height": "85%",
+					"flex":1,
+					"alignItems":"center",
+					"flexDirection": "row"
+				}
+			},
+			"wCompElems": {
+				"innerLayout1": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wWidgetParams": "",
+						"wDynamic": false,
+						"wMATSWidget": "MATSLayout",
+						"wName": "",
+						"wSubType": "",
+						"wType": ""
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "fa-wifi",
+							"backgroundColor": "#17549b",
+							"height": 585,
+							"width": 600,
+							"justifyContent": "center",
+							"alignItems": "center",
+							"borderRadius": 20,
+							"margin":10
+						}
+					},
+					"wCompElems": {
+						"image": {
+							"wCompDefs": {
+								"wDisplayName": "Login Page1",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSImage",
+								"wName": "",
+								"wSubType": "",
+								"wType": "h2"
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wPath":"../../Images/Rane_Group_Logo.jpg",
+								"wStyle": {
+									"height": 150,
+									"width": 350
+								}
+							},
+							"wCompElems": {}
+						},
+						"Text": {
+							"wCompDefs": {
+								"wDisplayName": "Login Page1",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSText",
+								"wName": "",
+								"wSubType": "",
+								"wType": "h1"
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wStyle": {
+									"backgroundColor": "",
+									"margin": 12,
+									"color": "white"
+								}
+							},
+							"wCompElems": {}
+						},
+						"userName": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSInput",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wPlaceholder": "userName",
+								"wIconStyle": {
+									"color": "white"
+								},
+								"wConStyle": {
+									"height": 40,
+									"marginVertical": 10,
+									"width": 300
+								},
+								"wStyle": {
+									"wClass": "user"
+								}
+							},
+							"wCompElems": {}
+						},
+						"pass": {
+							"wCompDefs": {
+								"wDisplayName": "",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSInput",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wPlaceholder": "password",
+								"wIconStyle": {
+									"color": "white"
+								},
+								"wConStyle": {
+									"height": 40,
+									"marginVertical": 10,
+									"width": 300
+								},
+								"wStyle": {
+									"wClass": "lock"
+								}
+							},
+							"wCompElems": {}
+						},
+						"SubmitBtn": {
+							"wCompDefs": {
+								"wDisplayName": "LOGIN",
+								"wWidgetParams": "",
+								"wDynamic": false,
+								"wMATSWidget": "MATSButton",
+								"wName": "",
+								"wSubType": "",
+								"wType": ""
+							},
+							"wProps": {
+								"wSpan": 24,
+								"wTitleStyle": {
+									"color": "black"
+								},
+								"wStyle": {
+									"backgroundColor": "white",
+									"wType": "solid",
+									"marginVertical": 20
+								}
+							},
+							"wCompElems": {}
+						}
+					}
+				}
+			}
+		},
+		"MATSFooter": {
+			"wCompDefs": {
+				"wDisplayName": "Powered by Linkez Technologies Private Limited",
+				"wType": "MATSFooter",
+				"wSubType": "",
+				"wName": "MATSFooter",
+				"wMATSWidget": "MATSFooter",
+				"wDynamic": false
+			},
+			"wProps": {
+				"wSpan": 24,
+				"wStyle": {
+					"wClass": "FooterBlue",
+                    "backgroundColor": "#17549b",
+                    "width":"100%"
+
+				}
+			}
+		}
+	}
+}

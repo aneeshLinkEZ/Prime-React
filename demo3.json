@@ -1,0 +1,31 @@
+{
+	"wDataSrv": {
+		"wProps": {}
+	},
+	"wCompElems": {
+		"main": {
+			"wCompDefs": {
+				"wDisplayName": "",
+				"wWidgetParams": "",
+				"wDynamic": false,
+				"wMATSWidget": "TextToSpeech",
+				"wName": "TextToSpeech",
+				"wSubType": "",
+				"wType": ""
+			},
+			"wProps": {
+				"wSpan": 24,
+				"wStyle": {
+					"wClass": "",
+					"padding": 50,
+					"justifyContent": "center",
+					"height": "85%",
+					"flex":1,
+					"alignItems":"center",
+					"flexDirection": "row"
+				}
+			},
+			"wCompElems": {}
+		}
+	}
+}

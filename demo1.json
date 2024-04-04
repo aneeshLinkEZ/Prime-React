@@ -1,0 +1,369 @@
+{
+	"wDataSrv": {
+		"wProps": {}
+	},
+	"wCompElems": {
+		"main": {
+			"wCompDefs": {
+				"wDisplayName": "",
+				"wWidgetParams": "",
+				"wDynamic": false,
+				"wMATSWidget": "MATSLayout",
+				"wName": "MATSLayout",
+				"wSubType": "",
+				"wType": ""
+			},
+			"wProps": {
+				"wSpan": 24,
+				"wStyle": {
+					"wClass": "",
+					"padding": 50,
+					"flex":1
+				}
+			},
+			"wCompElems": {
+				"checkBox": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSCheckBox",
+						"wMATSWidget": "MATSCheckBox",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSCarousel": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "",
+						"wMATSWidget": "MATSCarousel",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSBarChart": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "",
+						"wMATSWidget": "MATSBarChart",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue",
+							"width": 600,
+							"height": 450
+						}
+					}
+				},
+				"MATSModal": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSModal",
+						"wMATSWidget": "MATSModal",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSRangePicker": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSRangePicker",
+						"wMATSWidget": "MATSRangePicker",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSTable": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSTable",
+						"wMATSWidget": "MATSTable",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSSynchronizedLineChart": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSSynchronizedLineChart",
+						"wMATSWidget": "MATSSynchronizedLineChart",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSLineChart": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSLineChart",
+						"wMATSWidget": "MATSLineChart",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"width": 600,
+							"height": 450
+						}
+					}
+				},
+				"dateV": {
+					"wCompDefs": {
+						"wDisplayName": "Select Plan : ",
+						"wSubType": "",
+						"wName": "",
+						"wMATSWidget": "MATSDatePicker",
+						"wDynamic": false,
+						"wType": "S1"
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"width": 250,
+							"marginLeft": 20
+						}
+					}
+				},
+				"MATSSelect": {
+					"wCompDefs": {
+						"wDisplayName": "Select Plan : ",
+						"wSubType": "",
+						"wName": "",
+						"wMATSWidget": "MATSSelect",
+						"wDynamic": false,
+						"wType": "S1"
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"width": 250,
+							"paddingLeft": 20
+						}
+					}
+				},
+				"MATSGroupSelect": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSGroupSelect",
+						"wMATSWidget": "MATSGroupSelect",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSSteps": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSSteps",
+						"wMATSWidget": "MATSSteps",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSCalendar": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSCalendar",
+						"wMATSWidget": "MATSCalendar",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSMarquee": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSMarquee",
+						"wMATSWidget": "MATSMarquee",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSPrint": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSPrint",
+						"wMATSWidget": "MATSPrint",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSTile": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSTile",
+						"wMATSWidget": "MATSTile",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSSlider": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "MATSSlider",
+						"wMATSWidget": "MATSSlider",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSPieChart": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "",
+						"wMATSWidget": "MATSPieChart",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSDoughnutChart": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "",
+						"wMATSWidget": "MATSDoughnutChart",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				},
+				"MATSHeatMap": {
+					"wCompDefs": {
+						"wDisplayName": "",
+						"wType": "",
+						"wSubType": "",
+						"wName": "",
+						"wMATSWidget": "MATSHeatMap",
+						"wDynamic": false
+					},
+					"wProps": {
+						"wSpan": 24,
+						"wStyle": {
+							"wClass": "FooterBlue"
+						}
+					}
+				}
+			}
+		},
+		"MATSFooter": {
+			"wCompDefs": {
+				"wDisplayName": "Powered by Linkez Technologies Private Limited",
+				"wType": "MATSFooter",
+				"wSubType": "",
+				"wName": "MATSFooter",
+				"wMATSWidget": "MATSFooter",
+				"wDynamic": false
+			},
+			"wProps": {
+				"wSpan": 24,
+				"wStyle": {
+					"wClass": "FooterBlue"
+				}
+			}
+		}
+	}
+}

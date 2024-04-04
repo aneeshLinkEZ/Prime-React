@@ -1,0 +1,154 @@
+{
+
+  "wDataSrv": {
+    "wProps": {
+      "wData": {
+        "wDataInType": "server",
+        "wDataIn": [
+          {
+            "name": "loginCredentials",
+            "uri": "/authMgr/login",
+            "schemaFileName": "KGP_ppc_upload"
+          }
+        ],
+        "wReturnMsg": {},
+        "wDataOut": [ "loginCredentials" ],
+        "wDataOutType": "",
+        "wSensitiveTo": [ "loginCredentials" ],
+        "wCust": []
+      }
+    }
+
+  },
+  "wCompElems": {
+    "MATSLogin": {
+      "wCompDefs": {
+        "wDisplayName": "LOGIN",
+        "wType": "MatsLogin",
+        "wSubType": "",
+        "wName": "MATSLogin",
+        "wMATSWidget": "MATSLogin",
+        "wDynamic": false
+      },
+      "wProps": {
+        "wImagePath": "./mats.png",
+        "wSpan": 24,
+        "wStyle": {
+          "wClass": "orangeGradient"
+        },
+        "wData": {
+          "wDataInType": "",
+          "wDataIn": "",
+          "wReturnMsg": {},
+          "wDataOut": {
+            "userName": "",
+            "pwd": ""
+          },
+          "wDataOutType": "object",
+          "wCust": []
+        },
+        "wFeatures": {
+          "wborder": false,
+          "wClrBtn": false,
+          "wBlinkRate": "2",
+          "wEventList": {}
+        },
+        "wRules": [],
+        "wFieldValRulesCust": []
+      },
+      "wCompElems": {
+        "MatsButton": {
+          "wCompDefs": {
+            "wDisplayName": "LOGIN",
+            "wType": "MatsButton",
+            "wSubType": "",
+            "wName": "MatsButton",
+            "wMATSWidget": "MATSButton",
+            "wDynamic": false
+          },
+          "wProps": {
+            "wStyle": {
+              "wClass": "class-grey-nav"
+            },
+            "wData": {
+              "wDataInType": "array",
+              "wDataIn": [ "userName", "pwd" ],
+              "wReturnMsg": {},
+              "wDataOut": "loginCredentials",
+              "wDataOutType": "",
+              "wSensitiveTo": [ "userName", "pwd" ],
+              "wCust": []
+            },
+            "wFeatures": {
+              "wborder": false,
+              "wClrBtn": false,
+              "wBlinkRate": "2",
+              "wEventList": {
+                "Click": {
+                  "mActName": "bindSubmitKeys",
+                  "searchInObjExp1": {
+                    "mFnName": "bindSubmitKeys",
+                    "completedMsg": {
+                      "msgCode": "0x88101",
+                      "msg": "Completed"
+                    },
+                    "errMsg": {
+                      "msgCode": "0x00102",
+                      "msg": "Not found"
+                    },
+                    "fnInParams": {
+                      "aggregateVarList": [
+                        "userName",
+                        "pwd"
+                      ]
+                    },
+                    "fnOutParams": {
+                      "gblDataOut": {
+                        "aggregatedVar": "loginCredentials"
+                      },
+                      "lclDataOut": {}
+                    }
+                  }
+                }
+              }
+            },
+            "wRules": [],
+            "wFieldValRulesCust": []
+          }
+        }
+      }
+    },
+    "MATSFooter": {
+      "wCompDefs": {
+        "wDisplayName": "Powered by Linkez Technologies Private Limited",
+        "wType": "MATSFooter",
+        "wSubType": "",
+        "wName": "MATSFooter",
+        "wMATSWidget": "MATSFooter",
+        "wDynamic": false
+      },
+      "wProps": {
+        "wSpan": 24,
+        "wStyle": {
+          "wClass": "FooterOrange"
+        },
+        "wData": {
+          "wDataInType": "",
+          "wDataIn": "",
+          "wReturnMsg": {},
+          "wDataOut": "NA",
+          "wDataOutType": "",
+          "wCust": []
+        },
+        "wFeatures": {
+          "wborder": false,
+          "wClrBtn": false,
+          "wBlinkRate": "2",
+          "wEventList": {}
+        },
+        "wRules": [],
+        "wFieldValRulesCust": []
+      }
+    }
+  }
+}

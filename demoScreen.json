@@ -1,0 +1,2275 @@
+{
+    "wInitialize": {
+        "treeData": {
+            "wDataType": "",
+            "wDataInit": {
+                "name": "CEO",
+                "children": [
+                    {
+                        "name": "Manager",
+                        "attributes": {
+                            "department": "Production"
+                        },
+                        "children": [
+                            {
+                                "name": "Foreman",
+                                "attributes": {
+                                    "department": "Fabrication"
+                                },
+                                "children": [
+                                    {
+                                        "name": "Worker"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Foreman",
+                                "attributes": {
+                                    "department": "Assembly"
+                                },
+                                "children": [
+                                    {
+                                        "name": "Worker"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "dummyHeading": {
+            "wDataType": "",
+            "wDataInit": {
+                "mats_name": {
+                    "title": "Mats Name",
+                    "fieldType": "VARCHAR",
+                    "fieldValidationRules": []
+                },
+                "material_in_json": {
+                    "title": "BOM",
+                    "fieldType": "table",
+                    "fieldValidationRules": [],
+                    "childHeading": {
+                        "name": {
+                            "title": "SubPart Name",
+                            "fieldType": "VARCHAR",
+                            "fieldValidationRules": []
+                        },
+                        "qty": {
+                            "title": "Qty",
+                            "fieldType": "VARCHAR",
+                            "fieldValidationRules": []
+                        }
+                    }
+                },
+                "product_category_display_name": {
+                    "title": "Product Category",
+                    "fieldType": "select",
+                    "updateCols": {
+                        "product_category_display_name": "display_name"
+                    },
+                    "fieldValidationRules": []
+                }
+            }
+        },
+        "masterlist": {
+            "wDataType": "",
+            "wDataInit": {}
+        },
+        "multiSelection": {
+            "wDataType": "",
+            "wDataInit": {}
+        },
+        "headingT": {
+            "wDataType": "",
+            "wDataInit": []
+        },
+        "maskedFields": {
+            "wDataType": "",
+            "wDataInit": []
+        },
+        "addFormInit": {
+            "wDataType": "",
+            "wDataInit": {}
+        }
+    },
+    "updateWhenChanged": {
+        "masterName": {
+            "wDataInit": "selMaster",
+            "wDataType": "reference"
+        }
+    },
+    "wDataSrv": {
+        "wProps": {
+            "wData": {
+                "wDataInType": "server",
+                "wDataIn": [
+                    {
+                        "name": "uploadedDraft",
+                        "dataType": "object",
+                        "uri": "/draftUpload"
+                    },
+                    {
+                        "name": "masterName",
+                        "dataType": "object",
+                        "uri": "/selectedMaster"
+                    },
+                    {
+                        "name": "updatedRow",
+                        "uri": "/rowUpdated"
+                    },
+                    {
+                        "name": "uploadedFile",
+                        "uri": "/fileUpload"
+                    },
+                    {
+                        "name": "addRow",
+                        "uri": "/rowAdded",
+                        "updateValuesOnSend": {
+                            "showAddButton": false
+                        }
+                    },
+                    {
+                        "name": "deleteRow",
+                        "uri": "/deleteRow",
+                        "updateValuesOnSend": {
+                            "clickedObj": {}
+                        }
+                    },
+                    {
+                        "name":"uploadList",
+                        "uri": "/createVariableAlias",
+                        "updateValuesOnSend": {
+                            "clickedObj": {}
+                        }
+                    }
+                ],
+                "wReturnMsg": {},
+                "wDataOut": [],
+                "wDataOutType": "",
+                "wCust": [],
+                "wSensitiveTo": [
+                    "masterName",
+                    "updatedRow",
+                    "uploadedFile",
+                    "uploadedDraft",
+                    "addRow",
+                    "deleteRow",
+                    "uploadList"
+                ]
+            }
+        }
+    },
+    "wCompElems": {
+        "logo": {
+            "wCompElemRef": "Refimage",
+            "wProps": {
+                "wSpan": "2",
+                "wImagePath": "MATS-01.png",
+                "wStyle": {
+                    "width": "100%",
+                    "border": "2px solid #e0e0e",
+                    "margin": "0px",
+                    "padding": "",
+                    "box-shadow": "",
+                    "color": ""
+                }
+            },
+            "wCompElems": {}
+        },
+        "navbar": {
+            "wCompElemRef": "simplelayoutRef",
+            "wProps": {
+                "wSpan": "19",
+                "wStyle": {
+                    "background": "",
+                    "borderBottom": "4px #FFED00 solid",
+                    "margin": "0px 16px"
+                }
+            },
+            "wCompElems": {
+                "heading": {
+                    "wCompElemRef": "simpleTextRef",
+                    "wCompDefs": {
+                        "wDisplayName": "Production Planner"
+                    },
+                    "wProps": {
+                        "wStyle": {
+                            "fontSize": "16px"
+                        }
+                    },
+                    "wCompElems": {}
+                }
+            }
+        },
+        "userName": {
+            "wCompElemRef": "simpleTextRef",
+            "wCompDefs": {
+                "wDisplayName": "User Name"
+            },
+            "wProps": {
+                "wSpan": "2",
+                "wStyle": {
+                    "textAlign": "right",
+                    "fontSize": "13px",
+                    "paddingTop": "8px"
+                }
+            },
+            "wCompElems": {}
+        },
+        "userIcon": {
+            "wCompElemRef": "faIcon",
+            "wProps": {
+                "wSpan": "1",
+                "wStyle": {
+                    "margin": "0px",
+                    "padding": "6px",
+                    "color": "#1D9192",
+                    "textAlign": "center",
+                    "wClass": "fa-user",
+                    "fontSize": "20px"
+                }
+            },
+            "wCompElems": {}
+        },
+        "leftBar": {
+            "wCompElemRef": "simplelayoutRef",
+            "wProps": {
+                "wSpan": "1",
+                "wStyle": {
+                    "background": "#1D9192",
+                    "height": "95vh"
+                }
+            },
+            "wCompElems": {
+                "menubar": {
+                    "wCompElemRef": "faIcon",
+                    "wProps": {
+                        "wStyle": {
+                            "margin": "0px",
+                            "padding": "0px",
+                            "color": "white",
+                            "textAlign": "center",
+                            "wClass": "fa-bars",
+                            "fontSize": "25px"
+                        }
+                    },
+                    "wCompElems": {}
+                }
+            }
+        },
+        "mainLayout": {
+            "wCompElemRef": "simplelayoutRef",
+            "wProps": {
+                "wSpan": "22",
+                "wStyle": {
+                    "padding": "10px"
+                }
+            },
+            "wCompElems": {
+                "draftButton": {
+                    "wCompDefs": {
+                        "wDisplayName": "New Draft",
+                        "wType": "MatsButton",
+                        "wSubType": "",
+                        "wName": "MatsButton",
+                        "wMATSWidget": "MATSButton",
+                        "wDynamic": false
+                    },
+                    "wProps": {
+                        "wSpan": 3,
+                        "wDisabled": false,
+                        "wStyle": {},
+                        "wData": {
+                            "wDataInType": "array",
+                            "wDataIn": {
+                                "storeVar": {
+                                    "name": "buttonClicked"
+                                }
+                            },
+                            "wReturnMsg": {},
+                            "wDataOut": "showNewDraft",
+                            "wDataOutType": "",
+                            "wCust": []
+                        },
+                        "wFeatures": {
+                            "wEventList": {
+                                "Click": {
+                                    "mActName": "bindSubmitKeys",
+                                    "searchInObjExp1": {
+                                        "mFnName": "bindSubmitKeys",
+                                        "completedMsg": {
+                                            "msgCode": "0x88101",
+                                            "msg": "Completed"
+                                        },
+                                        "errMsg": {
+                                            "msgCode": "0x00102",
+                                            "msg": "Not found"
+                                        },
+                                        "fnInParams": {
+                                            "aggregateVarList": [
+                                                "buttonClicked",
+                                                "userName"
+                                            ]
+                                        },
+                                        "fnOutParams": {
+                                            "gblDataOut": {
+                                                "aggregatedVar": "showNewDraft"
+                                            },
+                                            "lclDataOut": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "wRules": [],
+                        "wFieldValRulesCust": []
+                    }
+                },
+                "input": {
+                    "wCompElemRef": "inputRef",
+                    "wProps": {
+                        "wSpan": "3",
+                        "wplaceholder": "Draft Name",
+                        "wStyle": {
+                            "background": "",
+                            "width": "100%",
+                            "margin": "0px",
+                            "padding": "5px",
+                            "box-shadow": "",
+                            "color": "",
+                            "display": "none",
+                            "marginTop": "-5px"
+                        },
+                        "wData": {
+                            "wDataInType": "",
+                            "wDataIn": {
+                                "storeVar": {
+                                    "name": "newDraftName"
+                                }
+                            },
+                            "wReturnMsg": {},
+                            "wDataOut": "draftName",
+                            "wDataOutType": "",
+                            "wCust": [],
+                            "wSensitiveTo": [
+                                "newDraftName",
+                                "showNewDraft"
+                            ],
+                            "wSensitiveEventList": []
+                        },
+                        "wFeatures": {
+                            "wEventList": {
+                                "Change": {
+                                    "mActName": "increaseStepCount",
+                                    "searchInObjExp1": {
+                                        "mFnName": "increaseStepCount",
+                                        "completedMsg": {
+                                            "msgCode": "0x88101",
+                                            "msg": "Completed"
+                                        },
+                                        "errMsg": {
+                                            "msgCode": "0x00102",
+                                            "msg": "Not found"
+                                        },
+                                        "fnInParams": {
+                                            "storeKey": "draftName"
+                                        },
+                                        "fnOutParams": {
+                                            "gblDataOut": {},
+                                            "lclDataOut": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "wRules": [
+                            {
+                                "exp": "props.showNewDraft",
+                                "action": {
+                                    "display": "block"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "MATSUpload": {
+                    "wCompDefs": {
+                        "wDisplayName": "Upload Excel",
+                        "wType": "MATSUpload",
+                        "wSubType": "",
+                        "wName": "MATSUpload",
+                        "wMATSWidget": "MATSUpload",
+                        "wDynamic": false
+                    },
+                    "wProps": {
+                        "wSpan": 2,
+                        "wDisabled": false,
+                        "wStyle": {
+                            "fontSize": "15px",
+                            "display": "none",
+                            "textAlign": "center"
+                        },
+                        "wData": {
+                            "wDataInType": "",
+                            "wDataIn": {
+                                "storeVar": {
+                                    "name": "showNewDraft"
+                                }
+                            },
+                            "wReturnMsg": {},
+                            "wDataOut": "draftFile",
+                            "wDataOutType": "",
+                            "wCust": [],
+                            "wSensitiveTo": [
+                                "showNewDraft"
+                            ],
+                            "wSensitiveEventList": []
+                        },
+                        "wFeatures": {
+                            "wEventList": {}
+                        },
+                        "wRules": [
+                            {
+                                "exp": "props.showNewDraft",
+                                "action": {
+                                    "display": "block"
+                                }
+                            }
+                        ],
+                        "wFieldValRulesCust": []
+                    }
+                },
+                "draftSubmit": {
+                    "wCompDefs": {
+                        "wDisplayName": "Create",
+                        "wType": "MatsButton",
+                        "wSubType": "",
+                        "wName": "MatsButton",
+                        "wMATSWidget": "MATSButton",
+                        "wDynamic": false
+                    },
+                    "wProps": {
+                        "wSpan": 3,
+                        "wDisabled": false,
+                        "wStyle": {
+                            "display": "none"
+                        },
+                        "wData": {
+                            "wDataInType": "array",
+                            "wDataIn": {
+                                "storeVar": {
+                                    "name": "created"
+                                }
+                            },
+                            "wReturnMsg": {},
+                            "wDataOut": "draftDetails",
+                            "wDataOutType": "",
+                            "wCust": [],
+                            "wSensitiveTo": [
+                                "draftName",
+                                "draftFile",
+                                "showNewDraft"
+                            ]
+                        },
+                        "wRules": [
+                            {
+                                "exp": "props.showNewDraft",
+                                "action": {
+                                    "display": "block"
+                                }
+                            }
+                        ],
+                        "wFeatures": {
+                            "wEventList": {
+                                "Click": {
+                                    "mActName": "bindSubmitKeys",
+                                    "searchInObjExp1": {
+                                        "mFnName": "bindSubmitKeys",
+                                        "completedMsg": {
+                                            "msgCode": "0x88101",
+                                            "msg": "Completed"
+                                        },
+                                        "errMsg": {
+                                            "msgCode": "0x00102",
+                                            "msg": "Not found"
+                                        },
+                                        "fnInParams": {
+                                            "aggregateVarList": [
+                                                "draftName",
+                                                "draftFile"
+                                            ]
+                                        },
+                                        "fnOutParams": {
+                                            "gblDataOut": {
+                                                "aggregatedVar": "uploadedDraft"
+                                            },
+                                            "lclDataOut": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "wFieldValRulesCust": []
+                    }
+                },
+                "mainLayout": {
+                    "wCompElemRef": "simplelayoutRef",
+                    "wProps": {
+                        "wSpan": "24",
+                        "wStyle": {
+                            "margin": "0px",
+                            "marginTop": "10px",
+                            "padding": "10px",
+                            "borderRadius": "15px"
+                        }
+                    },
+                    "wCompElems": {
+                        "mainWindow": {
+                            "wCompElemRef": "simplelayoutRef",
+                            "wProps": {
+                                "wSpan": "12",
+                                "wStyle": {
+                                    "border": "1px solid #C6C6C6",
+                                    "margin": "10px 10px",
+                                    "padding": "10px",
+                                    "borderRadius": "15px"
+                                }
+                            },
+                            "wCompElems": {
+                                "stageWindow": {
+                                    "wCompElemRef": "simplelayoutRef",
+                                    "wCompDefs": {
+                                        "wDynamic": true
+                                    },
+                                    "wProps": {
+                                        "wSpan": "23",
+                                        "wData": {
+                                            "wLookup": {
+                                                "mapKey": "",
+                                                "action": "stage1"
+                                            },
+                                            "wDataIn": {
+                                                "storeVar": {
+                                                    "name": "masterlist"
+                                                }
+                                            },
+                                            "wSensitiveTo": [
+                                                "masterlist"
+                                            ]
+                                        },
+                                        "wStyle": {
+                                            "background": "",
+                                            "borderBottom": "1px #C6C6C6 solid",
+                                            "margin": "10px 0px",
+                                            "overflow": "auto"
+                                        }
+                                    },
+                                    "wCompElems": {
+                                        "stage1": {
+                                            "wCompElemRef": "simpleTextRef",
+                                            "wCompDefs": {
+                                                "wDisplayName": "-"
+                                            },
+                                            "wProps": {
+                                                "wSpan": "",
+                                                "wStyle": {
+                                                    "borderRadius": "15px 15px 0px 0px",
+                                                    "width": "100%",
+                                                    "background": "#80deea",
+                                                    "margin": "0px",
+                                                    "padding": "2px",
+                                                    "textAlign": "center",
+                                                    "height": "21px",
+                                                    "fontSize": "12px"
+                                                },
+                                                "wData": {
+                                                    "wDataIn": {
+                                                        "storeVar": {
+                                                            "name": "displayName"
+                                                        }
+                                                    },
+                                                    "wDataOut": "",
+                                                    "wReturnMsg": {}
+                                                },
+                                                "wFeatures": {
+                                                    "wEventList": {
+                                                        "Click": {
+                                                            "mActName": "bindSubmitKeys",
+                                                            "searchInObjExp1": {
+                                                                "mFnName": "bindSubmitKeys",
+                                                                "completedMsg": {
+                                                                    "msgCode": "0x88101",
+                                                                    "msg": "Completed"
+                                                                },
+                                                                "errMsg": {
+                                                                    "msgCode": "0x00102",
+                                                                    "msg": "Not found"
+                                                                },
+                                                                "fnInParams": {
+                                                                    "aggregateVarList": [
+                                                                        "displayName",
+                                                                        "name"
+                                                                    ]
+                                                                },
+                                                                "fnOutParams": {
+                                                                    "gblDataOut": {
+                                                                        "aggregatedVar": "selMaster"
+                                                                    },
+                                                                    "lclDataOut": {}
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "wCompElems": {}
+                                        }
+                                    }
+                                },
+                                "openWindow": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "margin": "3px",
+                                            "padding": "0px",
+                                            "color": "#FFED00",
+                                            "textAlign": "center",
+                                            "wClass": "fa-external-link",
+                                            "fontSize": "15px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "filterWindow": {
+                                    "wCompElemRef": "simplelayoutRef",
+                                    "wProps": {
+                                        "wSpan": "24",
+                                        "wStyle": {
+                                            "textAlign": "center",
+                                            "margin": "10px 0px"
+                                        }
+                                    },
+                                    "wCompElems": {
+                                        "downloadIcon": {
+                                            "wCompElemRef": "faIcon",
+                                            "wProps": {
+                                                "wSpan": "2",
+                                                "wStyle": {
+                                                    "display": "none",
+                                                    "margin": "3px",
+                                                    "padding": "0px",
+                                                    "color": "#FFED00",
+                                                    "textAlign": "center",
+                                                    "wClass": "fa-download",
+                                                    "fontSize": "15px"
+                                                },
+                                                "wRules": [
+                                                    {
+                                                        "exp": "props.is_download_allowed",
+                                                        "action": {
+                                                            "display": "block"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "wCompElems": {}
+                                        },
+                                        "MATSUpload": {
+                                            "wCompDefs": {
+                                                "wDisplayName": "Upload Excel",
+                                                "wType": "MATSUpload",
+                                                "wSubType": "",
+                                                "wName": "MATSUpload",
+                                                "wMATSWidget": "MATSUpload",
+                                                "wDynamic": false
+                                            },
+                                            "wProps": {
+                                                "wSpan": 1,
+                                                "wDisabled": false,
+                                                "wStyle": {
+                                                    "fontSize": "15px",
+                                                    "display": "none"
+                                                },
+                                                "wData": {
+                                                    "wDataInType": "",
+                                                    "wDataIn": {
+                                                        "storeVar": {
+                                                            "name": "is_download_allowed"
+                                                        }
+                                                    },
+                                                    "wReturnMsg": {},
+                                                    "wDataOut": "uploadedFile",
+                                                    "wDataOutType": "",
+                                                    "wCust": [],
+                                                    "wSensitiveTo": [
+                                                        "is_download_allowed"
+                                                    ],
+                                                    "wSensitiveEventList": []
+                                                },
+                                                "wFeatures": {
+                                                    "wEventList": {}
+                                                },
+                                                "wRules": [
+                                                    {
+                                                        "exp": "props.is_download_allowed",
+                                                        "action": {
+                                                            "display": "block"
+                                                        }
+                                                    }
+                                                ],
+                                                "wFieldValRulesCust": []
+                                            }
+                                        },
+                                        "space": {
+                                            "wCompElemRef": "simpleTextRef",
+                                            "wCompDefs": {
+                                                "wDisplayName": ""
+                                            },
+                                            "wProps": {
+                                                "wSpan": "4",
+                                                "wStyle": {
+                                                    "textAlign": "right",
+                                                    "fontSize": "15px",
+                                                    "paddingTop": "12px"
+                                                }
+                                            },
+                                            "wCompElems": {}
+                                        },
+                                        "statusSelection": {
+                                            "wCompElemRef": "selectRef",
+                                            "wCompDefs": {
+                                                "wDisplayName": "status"
+                                            },
+                                            "wProps": {
+                                                "wSpan": 4,
+                                                "wStyle": {}
+                                            },
+                                            "wCompElems": {}
+                                        },
+                                        "dateRangeSelection": {
+                                            "wCompElemRef": "datePickerRefFromReference",
+                                            "wProps": {
+                                                "wSpan": "10",
+                                                "wStyle": {
+                                                    "width": "100%",
+                                                    "textAlign": "center",
+                                                    "position": "absolute",
+                                                    "min-height": "100%",
+                                                    "margin": "0px",
+                                                    "padding": "0px",
+                                                    "color": "",
+                                                    "fontSize": ""
+                                                }
+                                            },
+                                            "wCompElems": {}
+                                        },
+                                        "filter": {
+                                            "wCompElemRef": "faIcon",
+                                            "wProps": {
+                                                "wSpan": "1",
+                                                "wStyle": {
+                                                    "margin": "0px",
+                                                    "padding": "0px",
+                                                    "textAlign": "center",
+                                                    "color": "#1D9192",
+                                                    "wClass": "fa-filter",
+                                                    "fontSize": "15px"
+                                                }
+                                            },
+                                            "wCompElems": {}
+                                        },
+                                        "addIcon": {
+                                            "wCompElemRef": "faIcon",
+                                            "wProps": {
+                                                "wSpan": "1",
+                                                "wStyle": {
+                                                    "margin": "0px",
+                                                    "padding": "0px",
+                                                    "textAlign": "center",
+                                                    "color": "#1D9192",
+                                                    "wClass": "fa-plus",
+                                                    "fontSize": "15px"
+                                                },
+                                                "wFeatures": {
+                                                    "wEventList": {
+                                                        "onClick": {
+                                                            "mActName": "emptyValue",
+                                                            "emptyValue1": {
+                                                                "mFnName": "emptyValue",
+                                                                "completedMsg": {
+                                                                    "msgCode": "0x88101",
+                                                                    "msg": "Completed"
+                                                                },
+                                                                "errMsg": {
+                                                                    "msgCode": "0x00102",
+                                                                    "msg": "Not found"
+                                                                },
+                                                                "fnInParams": {
+                                                                    "clickedObj": {},
+                                                                    "showAddButton": true
+                                                                },
+                                                                "fnOutParams": {
+                                                                    "gblDataOut": {
+                                                                        "clickedObj": "clickedObj",
+                                                                        "showAddButton": "showAddButton"
+                                                                    },
+                                                                    "lclDataOut": {}
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "wCompElems": {}
+                                        }
+                                    }
+                                },
+                                "tableLayout": {
+                                    "wCompElemRef": "simplelayoutRef",
+                                    "wProps": {
+                                        "wSpan": "24",
+                                        "wStyle": {
+                                            "width": "100%",
+                                            "height": "70vh",
+                                            "overflowY": "auto",
+                                            "border": "",
+                                            "margin": "0px",
+                                            "padding": "0px"
+                                        }
+                                    },
+                                    "wCompElems": {
+                                        "table": {
+                                            "wCompElemRef": "sampleTableRef",
+                                            "wProps": {
+                                                "wStyle": {
+                                                    "width": "100%",
+                                                    "wScroll": {
+                                                        "x": "100px"
+                                                    },
+                                                    "rowClick": {
+                                                        "mActName": "tableButtonClicked",
+                                                        "searchInObjExp1": {
+                                                            "mFnName": "tableButtonClicked",
+                                                            "completedMsg": {
+                                                                "msgCode": "0x88101",
+                                                                "msg": "Completed"
+                                                            },
+                                                            "errMsg": {
+                                                                "msgCode": "0x00102",
+                                                                "msg": "Not found"
+                                                            },
+                                                            "fnInParams": {},
+                                                            "fnOutParams": {
+                                                                "gblDataOut": {
+                                                                    "index": "selectedIndex",
+                                                                    "wDataOut": "clickedObj",
+                                                                    "tableButtonClicked": "clickedObj"
+                                                                },
+                                                                "lclDataOut": {}
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "wData": {
+                                                    "wDataIn": {
+                                                        "tableHeading": {
+                                                            "name": "headingT"
+                                                        },
+                                                        "tableData": {
+                                                            "name": "data"
+                                                        }
+                                                    },
+                                                    "wSensitiveTo": [
+                                                        "headingT",
+                                                        "data"
+                                                    ]
+                                                }
+                                            },
+                                            "wCompElems": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "KPIWindow": {
+                            "wCompElemRef": "simplelayoutRef",
+                            "wProps": {
+                                "wSpan": "10",
+                                "wStyle": {}
+                            },
+                            "wCompElems": {
+                                "dynamicCards": {
+                                    "wCompElemRef": "simplelayoutRef",
+                                    "wProps": {
+                                        "wSpan": "24",
+                                        "wStyle": {
+                                            "overflowY": "auto",
+                                            "height": "80vh"
+                                        },
+                                        "wData": {
+                                            "wLookup": {},
+                                            "wDataIn": {
+                                                "storeVar": {
+                                                    "name": "headingT"
+                                                }
+                                            },
+                                            "wSensitiveTo": [
+                                                "headingT"
+                                            ]
+                                        }
+                                    },
+                                    "wCompElems": {
+                                        "rowUpdateForm": {
+                                            "wCompDefs": {
+                                                "wDisplayName": "",
+                                                "wType": "MATSForm",
+                                                "wSubType": "",
+                                                "wName": "MATSForm",
+                                                "wMATSWidget": "MATSForm",
+                                                "wDynamic": false
+                                            },
+                                            "wProps": {
+                                                "wSpan": 24,
+                                                "wStyle": {
+                                                    "wClass": ""
+                                                },
+                                                "wData": {
+                                                    "wDataInType": "",
+                                                    "wDataIn": {
+                                                        "storeVar": {
+                                                            "name": "maskedFields"
+                                                            
+                                                        }
+                                                    },
+                                                    "wReturnMsg": {},
+                                                    "wDataOut": "rowUpdate",
+                                                    "wDataOutType": "",
+                                                    "wCust": [],
+                                                    "wSensitiveTo": [
+                                                        "maskedFields",
+                                                        "clickedObj"
+                                                    ]
+                                                },
+                                                "wFeatures": {
+                                                    "initialValues": "clickedObj",
+                                                    "wEventList": []
+                                                },
+                                                "wRules": [],
+                                                "wFieldValRulesCust": []
+                                            }
+                                        }
+                                    }
+                                },
+                                "delete": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "marginTop": "-34px",
+                                            "position": "relative",
+                                            "margin": "0px",
+                                            "padding": "0px",
+                                            "textAlign": "center",
+                                            "wClass": "fa-trash",
+                                            "fontSize": "25px"
+                                        },
+                                        "wData": {
+                                            "wDataIn": {
+                                                "storeVar": {
+                                                    "name": "clickedObj"
+                                                }
+                                            },
+                                            "wSensitiveTo": [
+                                                "clickedObj",
+                                                "userName",
+                                                "masterName"
+                                            ],
+                                            "wReturnMsg": {
+                                                "clickedObj": "",
+                                                "userName": "",
+                                                "masterName": ""
+                                            }
+                                        },
+                                        "wFeatures": {
+                                            "wEventList": {
+                                                "onClick": {
+                                                    "mActName": "bindSubmitKeys",
+                                                    "bindSubmitKey": {
+                                                        "mFnName": "bindSubmitKeys",
+                                                        "completedMsg": {
+                                                            "msgCode": "0x88101",
+                                                            "msg": "Completed"
+                                                        },
+                                                        "errMsg": {
+                                                            "msgCode": "0x00102",
+                                                            "msg": "Not found"
+                                                        },
+                                                        "fnInParams": {
+                                                            "aggregateVarList": []
+                                                        },
+                                                        "fnOutParams": {
+                                                            "gblDataOut": {
+                                                                "aggregatedVar": "deleteRow"
+                                                            },
+                                                            "lclDataOut": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "rightBar": {
+            "wCompElemRef": "simplelayoutRef",
+            "wProps": {
+                "wSpan": "1",
+                "wStyle": {
+                    "background": "#1D9192",
+                    "height": "95vh"
+                }
+            },
+            "wCompElems": {
+                "rightBarIcons": {
+                    "wCompElemRef": "simplelayoutRef",
+                    "wProps": {
+                        "wSpan": "24",
+                        "wStyle": {
+                            "height": "auto"
+                        }
+                    },
+                    "wCompElems": {
+                        "menubar": {
+                            "wCompElemRef": "faIcon",
+                            "wProps": {
+                                "wStyle": {
+                                    "margin": "0px",
+                                    "padding": "0px",
+                                    "color": "white",
+                                    "textAlign": "center",
+                                    "wClass": "fa-bars",
+                                    "fontSize": "25px"
+                                },
+                                "wFeatures": {
+                                    "wEventList": {
+                                        "onClick": {
+                                            "mActName": "showDrawer",
+                                            "showDrawer1": {
+                                                "mFnName": "showDrawer",
+                                                "completedMsg": {
+                                                    "msgCode": "0x88101",
+                                                    "msg": "Completed"
+                                                },
+                                                "errMsg": {
+                                                    "msgCode": "0x00102",
+                                                    "msg": "Not found"
+                                                },
+                                                "fnInParams": {},
+                                                "fnOutParams": {
+                                                    "gblDataOut": {
+                                                        "showDrawer": "propDrawer"
+                                                    },
+                                                    "lclDataOut": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "wCompElems": {}
+                        },
+                        "menubar2": {
+                            "wCompElemRef": "faIcon",
+                            "wProps": {
+                                "wStyle": {
+                                    "margin": "0px",
+                                    "padding": "0px",
+                                    "color": "white",
+                                    "textAlign": "center",
+                                    "wClass": "fa-filter",
+                                    "fontSize": "25px"
+                                }
+                            },
+                            "wCompElems": {}
+                        },
+                        "menubar3": {
+                            "wCompElemRef": "faIcon",
+                            "wProps": {
+                                "wStyle": {
+                                    "margin": "0px",
+                                    "padding": "0px",
+                                    "color": "white",
+                                    "textAlign": "center",
+                                    "wClass": "fa-envelope",
+                                    "fontSize": "25px"
+                                }
+                            },
+                            "wCompElems": {}
+                        }
+                    }
+                }
+            }
+        },
+        "treeComp": {
+            "wCompElemRef": "MATSTreeRef",
+            "wProps": {},
+            "wCompElems": {}
+        },
+        "propDrawer": {
+            "wCompDefs": {
+                "wDisplayName": "",
+                "wType": "",
+                "wSubType": "",
+                "wName": "MATSALertDrawer",
+                "wMATSWidget": "MATSALertDrawer",
+                "wWidgetParams": "",
+                "wDynamic": false
+            },
+            "wProps": {
+                "placement": "right",
+                "wStyle": {
+                    "wClass": "",
+                    "width": "400px"
+                },
+                "wData": {
+                    "wDataInType": "",
+                    "wDataIn": "propDrawer",
+                    "wReturnMsg": {},
+                    "wDataOut": "NA",
+                    "wDataOutType": "",
+                    "wCust": [],
+                    "wSensitiveTo": [
+                        "propDrawer"
+                    ]
+                },
+                "wFeatures": {},
+                "wRules": [],
+                "wFieldValRulesCust": []
+            },
+            "wCompElems": {
+                "insideALertDrawerlayout": {
+                    "wCompElemRef": "simplelayoutRef",
+                    "wProps": {
+                        "wSpan": "1",
+                        "wStyle": {
+                            "background-color": "#ADD8E6 ",
+                            "borderRadius": "20px"
+                        }
+                    },
+                    "wCompElems": {
+                        "topLayout": {
+                            "wCompElemRef": "simplelayoutRef",
+                            "wProps": {
+                                "wSpan": "24",
+                                "wStyle": {
+                                    "background-color": "skyBlue",
+                                    "borderBottom": "3px solid #ffffff"
+                                }
+                            },
+                            "wCompElems": {
+                                "buttonRef": {
+                                    "wCompDefs": {
+                                        "wDisplayName": "ALL",
+                                        "wType": "MatsButton",
+                                        "wSubType": "",
+                                        "wName": "MatsButton",
+                                        "wMATSWidget": "MATSButton",
+                                        "wDynamic": false
+                                    },
+                                    "wProps": {
+                                        "wSpan": 3,
+                                        "wDisabled": false,
+                                        "wStyle": {
+                                            "background-color": "#35c9c5",
+                                            "border": "none",
+                                            "color": "white",
+                                            "text-align": "center",
+                                            "text-decoration": "none",
+                                            "display": "inline-block",
+                                            "margin": "20px 2px 0px 0px ",
+                                            "cursor": "pointer",
+                                            "border-radius": "8px"
+                                        },
+                                        "wData": {
+                                            "wDataInType": "array",
+                                            "wDataIn": {
+                                                "storeVar": {
+                                                    "name": ""
+                                                }
+                                            },
+                                            "wReturnMsg": {},
+                                            "wDataOut": "",
+                                            "wDataOutType": "",
+                                            "wCust": []
+                                        },
+                                        "wFeatures": {
+                                            "wEventList": {}
+                                        },
+                                        "wRules": [],
+                                        "wFieldValRulesCust": []
+                                    }
+                                },
+                                "buttonRef2": {
+                                    "wCompDefs": {
+                                        "wDisplayName": "CONVERSATION1",
+                                        "wType": "MatsButton",
+                                        "wSubType": "",
+                                        "wName": "MatsButton",
+                                        "wMATSWidget": "MATSButton",
+                                        "wDynamic": false
+                                    },
+                                    "wProps": {
+                                        "wSpan": 8,
+                                        "wDisabled": false,
+                                        "wStyle": {
+                                            "background-color": "#35c9c5",
+                                            "border": "none",
+                                            "color": "white",
+                                            "text-align": "center",
+                                            "text-decoration": "none",
+                                            "display": "inline-block",
+                                            "margin": "20px 2px 0px 0px ",
+                                            "cursor": "pointer",
+                                            "border-radius": "8px"
+                                        },
+                                        "wData": {
+                                            "wDataInType": "array",
+                                            "wDataIn": {
+                                                "storeVar": {
+                                                    "name": ""
+                                                }
+                                            },
+                                            "wReturnMsg": {},
+                                            "wDataOut": "",
+                                            "wDataOutType": "",
+                                            "wCust": []
+                                        },
+                                        "wFeatures": {
+                                            "wEventList": {}
+                                        },
+                                        "wRules": [],
+                                        "wFieldValRulesCust": []
+                                    }
+                                },
+                                "buttonRef3": {
+                                    "wCompDefs": {
+                                        "wDisplayName": "CONVERSATION2",
+                                        "wType": "MatsButton",
+                                        "wSubType": "",
+                                        "wName": "MatsButton",
+                                        "wMATSWidget": "MATSButton",
+                                        "wDynamic": false
+                                    },
+                                    "wProps": {
+                                        "wSpan": 8,
+                                        "wDisabled": false,
+                                        "wStyle": {
+                                            "background-color": "#35c9c5",
+                                            "border": "none",
+                                            "color": "white",
+                                            "text-align": "center",
+                                            "text-decoration": "none",
+                                            "display": "inline-block",
+                                            "margin": "20px 2px 0px 0px ",
+                                            "cursor": "pointer",
+                                            "border-radius": "8px"
+                                        },
+                                        "wData": {
+                                            "wDataInType": "array",
+                                            "wDataIn": {
+                                                "storeVar": {
+                                                    "name": ""
+                                                }
+                                            },
+                                            "wReturnMsg": {},
+                                            "wDataOut": "",
+                                            "wDataOutType": "",
+                                            "wCust": []
+                                        },
+                                        "wFeatures": {
+                                            "wEventList": {}
+                                        },
+                                        "wRules": [],
+                                        "wFieldValRulesCust": []
+                                    }
+                                },
+                                "questionMarkIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "3",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-question",
+                                            "fontSize": "35px",
+                                            "margin": "0px 0px 0px 10px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                }
+                            }
+                        },
+                        "userName": {
+                            "wCompElemRef": "simpleTextRef",
+                            "wCompDefs": {
+                                "wDisplayName": "User/Bot Name"
+                            },
+                            "wProps": {
+                                "wSpan": "12",
+                                "wStyle": {
+                                    "textAlign": "left",
+                                    "fontSize": "13px"
+                                },
+                                "wCompElems": {}
+                            }
+                        },
+                        "dateTimeText": {
+                            "wCompElemRef": "simpleTextRef",
+                            "wCompDefs": {
+                                "wDisplayName": "Date Time"
+                            },
+                            "wProps": {
+                                "wSpan": "10",
+                                "wStyle": {
+                                    "textAlign": "right",
+                                    "fontSize": "13px"
+                                }
+                            },
+                            "wCompElems": {}
+                        },
+                        "msgBoxLayout": {
+                            "wCompElemRef": "simplelayoutRef",
+                            "wProps": {
+                                "wSpan": "24",
+                                "wStyle": {
+                                    "background-color": "white",
+                                    "border": "1px solid skyBlue",
+                                    "borderRadius": "10px",
+                                    "margin": "5px 5px 5px 5px"
+                                }
+                            },
+                            "wCompElems": {
+                                "MATSTextArea": {
+                                    "wCompDefs": {
+                                        "wDisplayName": "",
+                                        "wType": "MATSTextArea",
+                                        "wSubType": "",
+                                        "wName": "MATSTextArea",
+                                        "wMATSWidget": "MATSTextArea",
+                                        "wDynamic": false
+                                    },
+                                    "wProps": {
+                                        "wSpan": 24,
+                                        "wStyle": {
+                                            "wClass": ""
+                                        },
+                                        "wData": {
+                                            "wDataInType": "",
+                                            "wDataIn": {
+                                                "storeVar": {
+                                                    "name": ""
+                                                }
+                                            },
+                                            "wReturnMsg": {},
+                                            "wDataOut": "",
+                                            "wDataOutType": "",
+                                            "wCust": []
+                                        },
+                                        "wFeatures": {
+                                            "wborder": false,
+                                            "wClrBtn": false,
+                                            "wBlinkRate": "2",
+                                            "wEventList": []
+                                        },
+                                        "wRules": [],
+                                        "wFieldValRulesCust": []
+                                    }
+                                },
+                                "bellicon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "2",
+                                        "wStyle": {
+                                            "margin": "3px",
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "center",
+                                            "wClass": "fa-bell",
+                                            "fontSize": "18px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "attechIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "2",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "center",
+                                            "wClass": "fa-paperclip",
+                                            "fontSize": "20px",
+                                            "margin": "2px 0px 0px 0px "
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "forkIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "7",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "center",
+                                            "wClass": "fa-code-fork",
+                                            "rotate": "170deg",
+                                            "fontSize": "20px",
+                                            "margin": "2px 0px 0px 0px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "forkIcon2": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-code-fork",
+                                            "fontSize": "23px",
+                                            "margin": "2px 0px 0px 50px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "shareIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-share",
+                                            "fontSize": "20px",
+                                            "margin": "5px 0px 0px 70px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "bellIcon2": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-bell",
+                                            "fontSize": "18px",
+                                            "margin": "5px 0px 0px 90px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "replyIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-reply",
+                                            "fontSize": "20px",
+                                            "margin": "5px 0px 0px 110px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                }
+                            }
+                        },
+                        "userName1": {
+                            "wCompElemRef": "simpleTextRef",
+                            "wCompDefs": {
+                                "wDisplayName": "User/Bot Name"
+                            },
+                            "wProps": {
+                                "wSpan": "12",
+                                "wStyle": {
+                                    "textAlign": "left",
+                                    "fontSize": "13px"
+                                },
+                                "wCompElems": {}
+                            }
+                        },
+                        "dateTimeText1": {
+                            "wCompElemRef": "simpleTextRef",
+                            "wCompDefs": {
+                                "wDisplayName": "Date Time"
+                            },
+                            "wProps": {
+                                "wSpan": "10",
+                                "wStyle": {
+                                    "textAlign": "right",
+                                    "fontSize": "13px"
+                                }
+                            },
+                            "wCompElems": {}
+                        },
+                        "msgBoxLayout1": {
+                            "wCompElemRef": "simplelayoutRef",
+                            "wProps": {
+                                "wSpan": "24",
+                                "wStyle": {
+                                    "background-color": "white",
+                                    "border": "1px solid skyBlue",
+                                    "borderRadius": "10px",
+                                    "margin": "5px 5px 5px 5px"
+                                }
+                            },
+                            "wCompElems": {
+                                "MATSTextArea": {
+                                    "wCompDefs": {
+                                        "wDisplayName": "",
+                                        "wType": "MATSTextArea",
+                                        "wSubType": "",
+                                        "wName": "MATSTextArea",
+                                        "wMATSWidget": "MATSTextArea",
+                                        "wDynamic": false
+                                    },
+                                    "wProps": {
+                                        "wSpan": 24,
+                                        "wStyle": {
+                                            "wClass": ""
+                                        },
+                                        "wData": {
+                                            "wDataInType": "",
+                                            "wDataIn": {
+                                                "storeVar": {
+                                                    "name": ""
+                                                }
+                                            },
+                                            "wReturnMsg": {},
+                                            "wDataOut": "",
+                                            "wDataOutType": "",
+                                            "wCust": []
+                                        },
+                                        "wFeatures": {
+                                            "wborder": false,
+                                            "wClrBtn": false,
+                                            "wBlinkRate": "2",
+                                            "wEventList": []
+                                        },
+                                        "wRules": [],
+                                        "wFieldValRulesCust": []
+                                    }
+                                },
+                                "bellicon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "2",
+                                        "wStyle": {
+                                            "margin": "3px",
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "center",
+                                            "wClass": "fa-bell",
+                                            "fontSize": "18px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "attechIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "2",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "center",
+                                            "wClass": "fa-paperclip",
+                                            "fontSize": "20px",
+                                            "margin": "2px 0px 0px 0px "
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "forkIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "7",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "center",
+                                            "wClass": "fa-code-fork",
+                                            "rotate": "170deg",
+                                            "fontSize": "20px",
+                                            "margin": "2px 0px 0px 0px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "forkIcon2": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-code-fork",
+                                            "fontSize": "23px",
+                                            "margin": "2px 0px 0px 50px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "shareIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-share",
+                                            "fontSize": "20px",
+                                            "margin": "5px 0px 0px 70px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "bellIcon2": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-bell",
+                                            "fontSize": "18px",
+                                            "margin": "5px 0px 0px 90px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "replyIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-reply",
+                                            "fontSize": "20px",
+                                            "margin": "5px 0px 0px 110px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                }
+                            }
+                        },
+                        "userName2": {
+                            "wCompElemRef": "simpleTextRef",
+                            "wCompDefs": {
+                                "wDisplayName": "User/Bot Name"
+                            },
+                            "wProps": {
+                                "wSpan": "12",
+                                "wStyle": {
+                                    "textAlign": "left",
+                                    "fontSize": "13px"
+                                },
+                                "wCompElems": {}
+                            }
+                        },
+                        "dateTimeText2": {
+                            "wCompElemRef": "simpleTextRef",
+                            "wCompDefs": {
+                                "wDisplayName": "Date Time"
+                            },
+                            "wProps": {
+                                "wSpan": "10",
+                                "wStyle": {
+                                    "textAlign": "right",
+                                    "fontSize": "13px"
+                                }
+                            },
+                            "wCompElems": {}
+                        },
+                        "msgBoxLayout2": {
+                            "wCompElemRef": "simplelayoutRef",
+                            "wProps": {
+                                "wSpan": "24",
+                                "wStyle": {
+                                    "background-color": "white",
+                                    "border": "1px solid skyBlue",
+                                    "borderRadius": "10px",
+                                    "margin": "5px 5px 5px 5px"
+                                }
+                            },
+                            "wCompElems": {
+                                "MATSTextArea": {
+                                    "wCompDefs": {
+                                        "wDisplayName": "",
+                                        "wType": "MATSTextArea",
+                                        "wSubType": "",
+                                        "wName": "MATSTextArea",
+                                        "wMATSWidget": "MATSTextArea",
+                                        "wDynamic": false
+                                    },
+                                    "wProps": {
+                                        "wSpan": 24,
+                                        "wStyle": {
+                                            "wClass": ""
+                                        },
+                                        "wData": {
+                                            "wDataInType": "",
+                                            "wDataIn": {
+                                                "storeVar": {
+                                                    "name": ""
+                                                }
+                                            },
+                                            "wReturnMsg": {},
+                                            "wDataOut": "",
+                                            "wDataOutType": "",
+                                            "wCust": []
+                                        },
+                                        "wFeatures": {
+                                            "wborder": false,
+                                            "wClrBtn": false,
+                                            "wBlinkRate": "2",
+                                            "wEventList": []
+                                        },
+                                        "wRules": [],
+                                        "wFieldValRulesCust": []
+                                    }
+                                },
+                                "bellicon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "2",
+                                        "wStyle": {
+                                            "margin": "3px",
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "center",
+                                            "wClass": "fa-bell",
+                                            "fontSize": "18px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "attechIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "2",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "center",
+                                            "wClass": "fa-paperclip",
+                                            "fontSize": "20px",
+                                            "margin": "2px 0px 0px 0px "
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "forkIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "7",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "center",
+                                            "wClass": "fa-code-fork",
+                                            "rotate": "170deg",
+                                            "fontSize": "20px",
+                                            "margin": "2px 0px 0px 0px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "forkIcon2": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-code-fork",
+                                            "fontSize": "23px",
+                                            "margin": "2px 0px 0px 50px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "shareIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-share",
+                                            "fontSize": "20px",
+                                            "margin": "5px 0px 0px 70px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "bellIcon2": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-bell",
+                                            "fontSize": "18px",
+                                            "margin": "5px 0px 0px 90px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "replyIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "1",
+                                        "wStyle": {
+                                            "padding": "0px",
+                                            "color": "#FFA500",
+                                            "textAlign": "center",
+                                            "wClass": "fa-reply",
+                                            "fontSize": "20px",
+                                            "margin": "5px 0px 0px 110px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                }
+                            }
+                        },
+                        "inputbox": {
+                            "wCompElemRef": "simplelayoutRef",
+                            "wProps": {
+                                "wSpan": "24",
+                                "wStyle": {
+                                    "background": "white",
+                                    "border": "1px solid skyBlue",
+                                    "margin": "10px 10px 10px 10px"
+                                }
+                            },
+                            "wCompElems": {
+                                "paperclipIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "20",
+                                        "wStyle": {
+                                            "margin": "0px",
+                                            "padding": "0px",
+                                            "color": "#D3D3D3",
+                                            "textAlign": "left",
+                                            "borderRadius": "70%",
+                                            "wClass": "fa-paperclip",
+                                            "fontSize": "25px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                },
+                                "telegramIcon": {
+                                    "wCompElemRef": "faIcon",
+                                    "wProps": {
+                                        "wSpan": "4",
+                                        "wStyle": {
+                                            "margin": "0px",
+                                            "padding": "0px",
+                                            "color": "skyBlue",
+                                            "textAlign": "left",
+                                            "borderRadius": "70%",
+                                            "wClass": "fa-telegram",
+                                            "fontSize": "30px"
+                                        }
+                                    },
+                                    "wCompElems": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "tableUpdateOnFormSub": {
+            "wCompDefs": {
+                "wDisplayName": "",
+                "wType": "",
+                "wSubType": "",
+                "wId": "",
+                "wName": "MATSLambda",
+                "wMATSWidget": "MATSLambda",
+                "wWidgetParams": "",
+                "wDynamic": false
+            },
+            "wProps": {
+                "wSpan": 6,
+                "wStyle": {
+                    "wClass": ""
+                },
+                "wData": {
+                    "wDataInType": "array",
+                    "wDataIn": {
+                        "storeVar": {
+                            "name": [
+                                "rowUpdate"
+                            ]
+                        }
+                    },
+                    "wSensitiveTo": [
+                        "rowUpdate",
+                        "data",
+                        "selectedIndex",
+                        "headingT"
+                    ],
+                    "wReturnMsg": {},
+                    "wDataOut": "data",
+                    "wDataOutType": "",
+                    "wCust": [],
+                    "params": {
+                        "obj": "data"
+                    }
+                },
+                "wFeatures": {
+                    "wEventList": {}
+                },
+                "wRules": [
+                    {
+                        "exp": "value.rowUpdate",
+                        "action": {},
+                        "mappedFunction": {
+                            "updateArray": {
+                                "params": {
+                                    "headingKey": "headingT",
+                                    "arrayKey": "data",
+                                    "rowIndex": "selectedIndex",
+                                    "updateKey": "data",
+                                    "copyFromKey": "rowUpdate",
+                                    "wDataOut": "data"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "wFieldValRulesCust": []
+            }
+        },
+        "convertHeadingToTableH": {
+            "wCompDefs": {
+                "wDisplayName": "",
+                "wType": "",
+                "wSubType": "",
+                "wId": "",
+                "wName": "MATSLambda",
+                "wMATSWidget": "MATSLambda",
+                "wWidgetParams": "",
+                "wDynamic": false
+            },
+            "wProps": {
+                "wSpan": 6,
+                "wStyle": {
+                    "wClass": ""
+                },
+                "wData": {
+                    "wDataInType": "array",
+                    "wDataIn": {
+                        "storeVar": {
+                            "name": [
+                                "heading"
+                            ]
+                        }
+                    },
+                    "wSensitiveTo": [
+                        "dummyHeading"
+                    ],
+                    "wReturnMsg": {},
+                    "wDataOut": "headingT",
+                    "wDataOutType": "",
+                    "wCust": [],
+                    "params": {
+                        "obj": "dummyHeading"
+                    }
+                },
+                "wFeatures": {
+                    "wEventList": {}
+                },
+                "wRules": [
+                    {
+                        "exp": "value.dummyHeading",
+                        "action": {},
+                        "mappedFunction": {
+                            "convertToTableFormat": {}
+                        }
+                    }
+                ],
+                "wFieldValRulesCust": []
+            }
+        },
+        
+        "updateRowDF": {
+            "wCompDefs": {
+                "wDisplayName": "",
+                "wType": "",
+                "wSubType": "",
+                "wId": "",
+                "wName": "MATSLambda",
+                "wMATSWidget": "MATSLambda",
+                "wWidgetParams": "",
+                "wDynamic": false
+            },
+            "wProps": {
+                "wSpan": 6,
+                "wStyle": {
+                    "wClass": ""
+                },
+                "wData": {
+                    "wDataInType": "array",
+                    "wDataIn": {
+                        "storeVar": {
+                            "name": [
+                                "rowUpdate",
+                                "masterName"
+                            ]
+                        }
+                    },
+                    "wSensitiveTo": [
+                        "rowUpdate"
+                    ],
+                    "wReturnMsg": {
+                        "masterName": "masterName",
+                        "userName": "userName",
+                        "uploadedDraft": "uploadedDraft"
+                    },
+                    "wDataOut": "updatedRow",
+                    "wDataOutType": "",
+                    "wCust": []
+                },
+                "wFeatures": {
+                    "wEventList": {}
+                },
+                "wRules": [
+                    {
+                        "exp": "value.rowUpdate",
+                        "action": {},
+                        "actionFlow": {
+                            "aggregateWDataIn": {
+                                "mActName": "bindSubmitKeys",
+                                "searchInObjExp1": {
+                                    "mFnName": "bindSubmitKeys",
+                                    "completedMsg": {
+                                        "msgCode": "0x88101",
+                                        "msg": "Completed"
+                                    },
+                                    "errMsg": {
+                                        "msgCode": "0x00102",
+                                        "msg": "Not found"
+                                    },
+                                    "fnInParams": {
+                                        "aggregateVarList": [
+                                            "rowUpdate"
+                                        ]
+                                    },
+                                    "fnOutParams": {
+                                        "gblDataOut": {
+                                            "aggregatedVar": "updatedRow"
+                                        },
+                                        "lclDataOut": {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "wFieldValRulesCust": []
+            }
+        },
+        "addRowDF": {
+            "wCompDefs": {
+                "wDisplayName": "",
+                "wType": "",
+                "wSubType": "",
+                "wId": "",
+                "wName": "MATSLambda",
+                "wMATSWidget": "MATSLambda",
+                "wWidgetParams": "",
+                "wDynamic": false
+            },
+            "wProps": {
+                "wSpan": 6,
+                "wStyle": {
+                    "wClass": ""
+                },
+                "wData": {
+                    "wDataInType": "array",
+                    "wDataIn": {
+                        "storeVar": {
+                            "name": [
+                                "rowAdded"
+                            ]
+                        }
+                    },
+                    "wSensitiveTo": [
+                        "rowAdded"
+                    ],
+                    "wReturnMsg": {
+                        "masterName": "masterName",
+                        "userName": "userName",
+                        "uploadedDraft": "uploadedDraft"
+                    },
+                    "wDataOut": "addRow",
+                    "wDataOutType": "",
+                    "wCust": []
+                },
+                "wFeatures": {
+                    "wEventList": {}
+                },
+                "wRules": [
+                    {
+                        "exp": "value.rowAdded",
+                        "action": {},
+                        "actionFlow": {
+                            "aggregateWDataIn": {
+                                "mActName": "bindSubmitKeys",
+                                "searchInObjExp1": {
+                                    "mFnName": "bindSubmitKeys",
+                                    "completedMsg": {
+                                        "msgCode": "0x88101",
+                                        "msg": "Completed"
+                                    },
+                                    "errMsg": {
+                                        "msgCode": "0x00102",
+                                        "msg": "Not found"
+                                    },
+                                    "fnInParams": {
+                                        "aggregateVarList": [
+                                            "rowAdded"
+                                        ]
+                                    },
+                                    "fnOutParams": {
+                                        "gblDataOut": {
+                                            "aggregatedVar": "addRow"
+                                        },
+                                        "lclDataOut": {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "wFieldValRulesCust": []
+            }
+        },
+        "updateModal": {
+            "wCompDefs": {
+                "wDisplayName": "Add new",
+                "wType": "MATSModal",
+                "wSubType": "",
+                "wName": "MATSModal",
+                "wMATSWidget": "MATSModal",
+                "wDynamic": false
+            },
+            "wProps": {
+                "wSpan": 24,
+                "wStyle": {},
+                "wData": {
+                    "wDataInType": "",
+                    "wDataIn": {
+                        "storeVar": {
+                            "name": "showAddButton"
+                        }
+                    },
+                    "wReturnMsg": {},
+                    "wDataOut": "NA",
+                    "wDataOutType": "",
+                    "wCust": [],
+                    "wSensitiveTo": [
+                        "showAddButton"
+                    ]
+                },
+                "wFeatures": {
+                    "wEventList": {},
+                    "okButtonProps": {
+                        "style": {
+                            "display": "none"
+                        }
+                    },
+                    "cancelButtonProps": {
+                        "style": {
+                            "display": "none"
+                        }
+                    }
+                },
+                "wRules": []
+            },
+            "wCompElems": {
+                "rowAddForm": {
+                    "wCompDefs": {
+                        "wDisplayName": "",
+                        "wType": "MATSForm",
+                        "wSubType": "",
+                        "wName": "MATSForm",
+                        "wMATSWidget": "MATSForm",
+                        "wDynamic": false
+                    },
+                    "wProps": {
+                        "wSpan": 24,
+                        "wStyle": {
+                            "wClass": ""
+                        },
+                        "wData": {
+                            "wDataInType": "",
+                            "wDataIn": {
+                                "storeVar": {
+                                    "name": "maskedFields"
+                                }
+                            },
+                            "wReturnMsg": {},
+                            "wDataOut": "rowAdded",
+                            "wDataOutType": "",
+                            "wCust": [],
+                            "wSensitiveTo": [
+                                "maskedFields",
+                                "addFormInit"
+                            ]
+                        },
+                        "wFeatures": {
+                            "initialValues": "addFormInit",
+                            "wEventList": []
+                        },
+                        "wRules": [],
+                        "wFieldValRulesCust": []
+                    }
+                }
+            }
+        }
+    }
+}
